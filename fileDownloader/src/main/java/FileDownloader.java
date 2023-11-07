@@ -40,7 +40,7 @@ public class FileDownloader {
                 while ((bytesRead = inputStream.read(buffer)) != -1) {
                     outputStream.write(buffer, 0, bytesRead);
                     totalBytesRead += bytesRead;
-                    progressPercentage(totalBytesRead,contentLength);
+                    displayProgressBar(totalBytesRead,contentLength);
                 }
 
 
@@ -50,7 +50,7 @@ public class FileDownloader {
         }
     }
 
-    public static void progressPercentage(int bytesRead, long contentLength) {
+    public static void displayProgressBar(int bytesRead, long contentLength) {
         int progress = (int) (bytesRead * 1.0 / contentLength * 100);
         System.out.print("\r[");
 
